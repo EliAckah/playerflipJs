@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dark-grey: #0a0a23;
+  --light-grey: #f5f6f7;
+  --white: #ffffff;
+  --black: #000;
+  --violet-color: #b545ed; /* Modern touch of color */
+  --secondary-color: #1e1e2e; /* Darker shade for contrast */
+}
+
+body {
+  background-color: var(--dark-grey);
+  text-align: center;
+  font-family: "Poppins", sans-serif; /* Modern font */
+  padding: 10px;
+}
+
+select {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.title,
+.options-label,
+.team-stats,
+footer {
+  color: var(--white);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 1.5rem 0;
+}
+
+.team-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 1.3rem;
+  margin: 1.5rem 0;
+  gap: 20px; /* Better spacing */
+}
+
+.options-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.cards {
+ margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adds spacing between cards */
+}
+
+.player-card {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    border: 2px solid #b545ed;
+    padding: 1.5rem;
+    margin: 1.2rem;
+    width: 320px;
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+
+.player-card:hover {
+    background-color: var(--violet-color);
+    border: none;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
+}
+
+@media (max-width: 768px) {
+  .team-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
