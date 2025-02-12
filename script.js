@@ -192,11 +192,36 @@ const setPlayerCards = (arr = players) => {
         return `
         <div class="player-card">
         <h2>${isCaptain ? "(Captain)" : ""} ${name}</h2>
-        </div>
         <p>Position: ${position}</p>
         <p>Number: ${number}</p>
         <p>Nickname: ${nickname ? nickname : "N/A"}</p>
+        </div>
         `
     }).join("");
 }
 
+// add event listener to dropdown menu
+playersDropdownList.addEventListener('change', (e) => {
+    playerCards.innerHTML = "";
+    switch (e.target.value) {
+        case "nickname":
+            setPlayerCards(players.filter(player => player.nickname !== null));
+            break;
+        case "forward":
+            setPlayerCards(players.filter(player => player.position === "forward"));
+            break;
+        case "midfielder":
+            setPlayerCards(players.filter(player => player.position === "midfielder"));
+            break;
+        case "defender":
+            setPlayerCards(players.filter(player => player.position === "defender"));
+            break;
+        case "goalkeeper":
+            setPlayerCards(players.filter(player => player.position === "goalkeeper"));
+            break;
+        default:
+            setPlayerCards();
+            break;
+
+    }
+});
