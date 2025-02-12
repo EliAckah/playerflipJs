@@ -56,4 +56,4 @@ This project is open-source and available for use under the MIT License.
 
 ## Author
 
-Developed by [Your Name]
+Developed by Elijah Ackah
